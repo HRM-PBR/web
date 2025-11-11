@@ -1,0 +1,139 @@
+/*
+ Roberto Paz Barrera
+Fecha de creación: 10/27/25
+Descripción: Calculadora web creada con HTML, CSS y JavaScript que permite realizar operaciones aritméticas básicas y mostrar los resultados en pantalla.
+*/
+
+/* Reseteo de márgenes y paddings */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;   
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(45, 56, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor de la calculadora */
+.calculadora{
+    background-color: rgba(0, 183, 255, 0.325);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Pantalla de visualización */
+.pantalla{
+    background-color: aliceblue;
+    color: cadetblue;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+/* Cuadrícula de botones */
+.botones{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Botones generales */
+.boton{
+    background-color: rgb(255, 255, 255);
+    color: rgb(118, 101, 31);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px;
+    cursor: pointer;
+    transition: all .2s ease;
+    user-select: none;
+}
+
+/* Efecto al pasar el cursor */
+.boton:hover{
+    background-color: rgba(184, 173, 173, 0.396);
+    transform: scale(1.20);
+}
+
+/* Efecto al presionar */
+.boton:active{
+    transform: scale(0.95);
+}
+
+/* Estilos específicos por tipo de botón */
+.boton-operador{
+    background-color: rgb(63, 22, 77);
+}
+
+.boton-operador:hover{
+    background-color: rgb(53, 35, 99);
+}
+
+.boton-especial{
+    background-color:rgb(18, 88, 91);
+}
+
+.boton-especial:hover{
+    background-color: rgb(18, 76, 89);
+}
+
+.boton-cero{
+    grid-column: span 2;
+}
+
+/* Animación de pulsación */
+@keyframes pulsar{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulsar{
+    animation: pulsar 0.1s ease-in-out ;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 400px) {
+    .calculadora{
+        padding: 15px;
+    }
+
+    .boton{
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .pantalla{
+        font-size: 24px;
+        padding: 15px;
+        min-height: 60px;
+    }
+}
